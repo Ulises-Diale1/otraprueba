@@ -1,0 +1,35 @@
+{ //para automatizar la compilación
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "compilar archivo activo C/C++ con g++.exe",
+			"command": "C:\\MinGW\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compilador: C:\\MinGW\\bin\\g++.exe"
+		},
+		{
+			"label": "compilar y ejecutar archivo activo C/C++ con g++.exe",
+			"command": "./${fileBasenameNoExtension}.exe",
+			"dependsOn": "compilar archivo activo C/C++ con g++.exe", //primero se ejecuta esta tarea
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
