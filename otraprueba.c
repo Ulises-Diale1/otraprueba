@@ -2,5 +2,5 @@
 int main(int argc, char const *argv[])
 {
     printf("si funca la cosaaaaaa\n");
-    return 0; //comentarioxdddddd
+    return 0; //comentarioxdddd
 }
